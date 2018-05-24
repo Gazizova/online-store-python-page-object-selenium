@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions
 from src.uimap import Locators
 from base_page import BasePage
 from base_page import InvalidPageException
+from my_account_page import AccountPage
 
 class LoginPage(BasePage):
 
@@ -32,3 +33,4 @@ class LoginPage(BasePage):
     def clickSihgInButton(self):
         SignInButton = self.driver.find_element(By.ID, Locators.SubmitLoginButtonID)
         SignInButton.click()
+        # return AccountPage(self.driver)
