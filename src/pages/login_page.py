@@ -1,10 +1,15 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.ui import WebDriverWait
+
+from src.pages.base_page import BasePage
+from src.pages.my_account.my_account_page import AccountPage
+# from base_page import BasePage
+from src.pages.base_page import InvalidPageException
 from src.uimap import Locators
-from base_page import BasePage
-from base_page import InvalidPageException
-from my_account_page import AccountPage
+
+
+# from base_page import InvalidPageException
 
 class LoginPage(BasePage):
 
@@ -33,4 +38,4 @@ class LoginPage(BasePage):
     def clickSihgInButton(self):
         SignInButton = self.driver.find_element(By.ID, Locators.SubmitLoginButtonID)
         SignInButton.click()
-        # return AccountPage(self.driver)
+        return AccountPage(self.driver)

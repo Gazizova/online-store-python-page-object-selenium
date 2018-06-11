@@ -1,14 +1,9 @@
 import unittest
-from selenium.webdriver.common.by import By
-from selenium import webdriver
-from src.uimap import Locators
-from selenium.webdriver.support import expected_conditions
-from src.pages.login_page import LoginPage
-from src.pages.start_page import StartPage
-from src.pages.my_account_page import AccountPage
-from selenium.webdriver.support.ui import WebDriverWait
-from basetestcase import BaseTestCase
 
+from basetestcase import BaseTestCase
+from src.pages.login_page import LoginPage
+from src.pages.my_account.my_account_page import AccountPage
+from src.pages.start_page import StartPage
 
 
 class MyTestCase(BaseTestCase):
@@ -17,8 +12,8 @@ class MyTestCase(BaseTestCase):
         # self.setup()
         # self.navigate_to_page(Locators.url)
 
-    #     self.driver = webdriver.Chrome()
-    #     self.driver.get(Locators.url)
+        # self.driver = webdriver.Chrome()
+        # self.driver.get(Locators.url)
 
     def test_login(self):
         start = StartPage(self.driver)
@@ -30,9 +25,16 @@ class MyTestCase(BaseTestCase):
         login.clickSihgInButton()
 
         self.account = AccountPage(self.driver)
+        self.account._validate_page(self.driver)
+        self.account.order_history().click()
 
-        # assert WebDriverWait(self.driver, 10).until(
-        #         expected_conditions.title_contains("My account - My Store"))
+
+    # def test_order_history(self):
+    #     MyTestCase.test_login()
+    #     self.account = AccountPage(self.driver)
+    #
+    #     self.account.order_history().click()
+
 
 
 

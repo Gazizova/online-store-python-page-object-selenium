@@ -24,3 +24,7 @@ class Locators(object):
 
     # My account
     OrderHistoryAndDetailsXpath = '//span[text()="Order history and details"]'
+    MyCreditSlips = '//span[text()="My credit slips"]'
+    MyAddress = '//span[text()="My addresses"]'
+    MyPersonalInformation = '//span[text()="My personal information"]'
+    MyWishlist = '//span[text()="My wishlists"]'

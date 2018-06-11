@@ -4,9 +4,9 @@ from selenium.webdriver.support import expected_conditions
 from src.uimap import Locators
 from selenium import webdriver
 from src.pages.login_page import LoginPage
-from base_page import BasePage
-from base_page import InvalidPageException
-from login_page import LoginPage
+from src.pages.base_page import BasePage
+from src.pages.base_page import InvalidPageException
+from src.pages.login_page import LoginPage
 
 class StartPage(BasePage):
 
